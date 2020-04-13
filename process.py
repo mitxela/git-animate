@@ -6,11 +6,7 @@ EMPTY_TREE_SHA = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 
 repo = git.Repo(".")
 
-# put here the files you want to filter, this will only show changes
-# on those files (only one at a time)
-# renamed files also work, like the example below where
-# "Event.lua" was renamed to "src/Event.lua".
-# Empty means no filter / all files.
+# put here the file you want to filter
 file_name = ["playback.py"]
 
 commits = list(repo.iter_commits(paths=file_name))
