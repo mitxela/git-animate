@@ -4,7 +4,7 @@ Reads through a git repo and turns each commit into a series of vim keystrokes. 
 
 Only works on a single file. If the repo has multiple files being changed in it, you will probably need to alter this script to filter out the one you want. It is a good idea to rebase any merge commits so that the history reads as if it was written by a single author.
 
-`pip install git whatthepatch keyboard`
+`pip install GitPython whatthepatch keyboard`
 
 `process.py` reads the git history and outputs the patches as a list of tuples representing changes. E.g. `python process.py > allpatches.txt` 
 
