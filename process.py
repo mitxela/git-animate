@@ -12,8 +12,6 @@ file_name = ["playback.py"]
 commits = list(repo.iter_commits(paths=file_name))
 commits.reverse()
 
-print(commits)
-
 # first commit hack
 patch = commits[0].diff(EMPTY_TREE_SHA, paths=file_name,
                         create_patch=True)[0].diff.decode("utf-8")
