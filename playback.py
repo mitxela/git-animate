@@ -1,8 +1,8 @@
 import keyboard
 import ast
-import time
+import time, sys
 
-filename="allpatches.txt"
+filename=sys.argv[1]
 
 # stop after this many commits
 stopearly=9999

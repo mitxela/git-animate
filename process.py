@@ -1,3 +1,4 @@
+import sys
 import git
 import whatthepatch
 
@@ -6,8 +7,7 @@ EMPTY_TREE_SHA = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 
 repo = git.Repo(".")
 
-# put here the file you want to filter
-file_name = ["playback.py"]
+file_name = sys.argv[1:]
 
 commits = list(repo.iter_commits(paths=file_name))
 commits.reverse()
