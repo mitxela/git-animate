@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import keyboard
 import ast
 import time, sys
@@ -12,7 +13,7 @@ stopearly=9999
 def vimcmd(x):
 	keyboard.write(x)
 	keyboard.press_and_release('enter')
-	
+
 def window(lr):
 	keyboard.press_and_release('ctrl+w, '+lr)
 
@@ -33,7 +34,7 @@ msgwindow=0
 def navigate(to):
 	global current_line
 
-	jump=abs(current_line-to)	
+	jump=abs(current_line-to)
 
 	vimcmd(":"+str(to))
 	current_line=to
@@ -64,7 +65,7 @@ for line in open(filename):
 			vimcmd(":set syntax=xml")
 			vimcmd(':file commit_messages')
 			msgwindow=1
-		else:		
+		else:
 			window('right')
 		keyboard.write('i<'+name+'>: '+msg)
 		keyboard.press_and_release('esc')
@@ -89,7 +90,7 @@ for line in open(filename):
 	elif i==None:
 		navigate(d+lines_added-lines_removed)
 
-		keyboard.write("dd")	
+		keyboard.write("dd")
 		lines_removed=1+lines_removed
 
 
